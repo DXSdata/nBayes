@@ -45,7 +45,7 @@
                 string clean = CleanInput(source);
                 string[] tokens = clean.Split(' ');
                 return tokens
-                    .Where(t => !t.Equals(" ", StringComparison.InvariantCultureIgnoreCase))
+                    .Where(t => !t.Equals(" ", StringComparison.OrdinalIgnoreCase))
                     .Select(t => t.ToLowerInvariant())
                     .Distinct();
             }

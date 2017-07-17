@@ -4,7 +4,7 @@
     using System.Xml.Serialization;
 
     /// <remarks>Original code found here: http://weblogs.asp.net/pwelter34/archive/2006/05/03/444961.aspx</remarks>
-    [XmlRoot("index")]
+    //[XmlRoot("index")]
     public class IndexTable<TKey, TValue>
         : Dictionary<TKey, TValue>, IXmlSerializable
     {
