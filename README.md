@@ -1,6 +1,6 @@
-# nBayes for .NET Core
+# nBayes for .NET Core / .NET Standard 2.0
 This is a fork of https://github.com/joelmartinez/nBayes.
-While the original repos is used with .NET Framework, you can use this one with .NET Core.
+While the original repos is used with .NET Framework, you can use this one with .NET Core / .NET Standard.
 A Nuget package is also available.
 
 
