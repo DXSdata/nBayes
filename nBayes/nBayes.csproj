@@ -2,10 +2,29 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <ApplicationIcon />
     <OutputTypeEx>library</OutputTypeEx>
     <StartupObject />
+
+    <PackageId>nBayes.DXSdata</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>DXSdata</Authors>
+    <Description>Fork of joelmartinez/nBayes, ported for usage with .NET Core</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>DXSdata / MIT</Copyright>
+    <PackageTags>Bayes nBayes classifier .NET Core Standard DXSdata</PackageTags>
+    <PackageProjectUrl>http://www.dxsdata.com</PackageProjectUrl>
+    <Title>nBayes for .NET Core</Title>
+    <Version>2.0.0</Version>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.0\nBayes.xml</DocumentationFile>
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0</DefineConstants>
+    <OutputPath>bin\Release\netcoreapp2.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
