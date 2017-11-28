@@ -7,12 +7,14 @@
         private float I = 0;
         private float invI = 0;
 
-        private float _prediction = float.NaN;
+        private float _prediction;
 
         private Entry item;
         private Index first;
         private Index second;
         private float tolerance;
+
+        bool calculated = false;
 
         public Analyzer(Entry item, Index first, Index second, float tolerance = .05f)
         {
@@ -26,7 +28,7 @@
         {
             get
             {
-                if (float.IsNaN(_prediction))
+                if (!calculated)
                     _prediction = GetPrediction();
 
                 return _prediction;
@@ -69,6 +71,9 @@
             }
 
             float prediction = CombineProbability();
+
+            calculated = true;
+
             return prediction;
         }
 

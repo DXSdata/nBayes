@@ -33,7 +33,12 @@
                 using (Stream stream = File.OpenRead(this.filePath))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(IndexTable<string, int>));
-                    index.table = serializer.Deserialize(stream) as IndexTable<string, int>;
+                    try
+                    {
+                        index.table = serializer.Deserialize(stream) as IndexTable<string, int>;
+                    }
+                    catch(InvalidOperationException) //e.g. if file empty
+                    {}
                 }
             }
         }

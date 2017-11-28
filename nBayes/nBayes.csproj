@@ -8,7 +8,7 @@
     <StartupObject />
 
     <PackageId>nBayes.DXSdata</PackageId>
-    <PackageVersion>3.0.0</PackageVersion>
+    <PackageVersion>3.0.1</PackageVersion>
     <Authors>DXSdata</Authors>
     <Description>Fork of joelmartinez/nBayes, ported for usage with .NET Core / .NET Standard</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -19,7 +19,7 @@ Changed framework for the sample project back from netstandard to netcoreapp, ot
     <PackageTags>Bayes nBayes classifier .NET Core Standard DXSdata</PackageTags>
     <PackageProjectUrl>http://www.dxsdata.com/2017/07/bayes-classifier-library-for-net-core/</PackageProjectUrl>
     <Title>nBayes for .NET Core</Title>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIconUrl></PackageIconUrl>
     <RepositoryUrl>https://github.com/DXSdata/nBayes</RepositoryUrl>
