@@ -8,7 +8,7 @@
     <StartupObject />
 
     <PackageId>nBayes.DXSdata</PackageId>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>3.0.0</PackageVersion>
     <Authors>DXSdata</Authors>
     <Description>Fork of joelmartinez/nBayes, ported for usage with .NET Core / .NET Standard</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
