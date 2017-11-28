@@ -7,29 +7,51 @@
         private float I = 0;
         private float invI = 0;
 
-        public Analyzer()
+        private float _prediction = float.NaN;
+
+        private Entry item;
+        private Index first;
+        private Index second;
+        private float tolerance;
+
+        public Analyzer(Entry item, Index first, Index second, float tolerance = .05f)
         {
-            this.Tolerance = .05f;
+            this.item = item;
+            this.first = first;
+            this.second = second;
+            this.tolerance = tolerance;
+        }        
+
+        public float Prediction
+        {
+            get
+            {
+                if (float.IsNaN(_prediction))
+                    _prediction = GetPrediction();
+
+                return _prediction;
+            }
         }
 
-        public float Tolerance { get; set; }
-
-        public CategorizationResult Categorize(Entry item, Index first, Index second)
+        public CategorizationResult Category
         {
-            float prediction = GetPrediction(item, first, second);
+            get
+            {
+                if (Prediction <= .5f - tolerance)
+                    return CategorizationResult.Second;
 
-            if (prediction <= .5f - this.Tolerance)
-                return CategorizationResult.Second;
-
-            if (prediction >= .5 + this.Tolerance)
-                return CategorizationResult.First;
-
-
-            return CategorizationResult.Undetermined;
+                if (Prediction >= .5 + tolerance)
+                    return CategorizationResult.First;
+                
+                return CategorizationResult.Undetermined;
+            }
         }
 
-        public float GetPrediction(Entry item, Index first, Index second)
+        private float GetPrediction()
         {
+            I = 0;
+            invI = 0;
+
             foreach (string token in item)
             {
                 int firstCount = first.GetTokenCount(token);

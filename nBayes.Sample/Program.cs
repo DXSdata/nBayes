@@ -15,11 +15,15 @@ namespace nBayes.Sample
             notspam.Add(Entry.FromString("Hello, how are you?"));
             notspam.Add(Entry.FromString("Did you go to the park today?"));
 
-            Analyzer analyzer = new Analyzer();
-            CategorizationResult result = analyzer.Categorize(
-                 Entry.FromString("cialis viagra"),
-                 spam,
-                 notspam);
+            Analyzer analyzer = new Analyzer(
+                Entry.FromString("cialis viagra"),
+                spam,
+                notspam);
+
+            float prediction = analyzer.Prediction;
+            Console.WriteLine("Prediction (good < 0.5 > spam): " + prediction);
+
+            CategorizationResult result = analyzer.Category;
 
             switch (result)
             {
