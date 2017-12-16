@@ -14,7 +14,7 @@
         {
             get
             {
-                return table.Values.Sum();
+                return table.Values.ToList().Sum(); //ToList() to prevent "invalidoperationexception / collection modified"
             }
         }
 
